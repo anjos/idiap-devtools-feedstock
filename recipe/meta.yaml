@@ -1,43 +1,35 @@
 {% set name = "idiap-devtools" %}
-{% set version = "1.0.0" %}
+{% set version = "2.0.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/idiap-devtools-{{ version }}.tar.gz
-  sha256: 97d8b0b1b37ff808d0c24c27069bb64aa16eed2f30e91e2cb18d7d88a2252012
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
+  sha256: 52fc1f2c5a0f01d48fbe99b8338d7f7b7a842106405feb292ff89f3ae0dfa988
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 1
+  number: 0
 
 requirements:
   host:
-    - python >=3.9
-    - setuptools >=61.0.0
-    - wheel
+    - python >=3.10
+    - hatchling
+    - versioningit
     - pip
   run:
-    - conda
-    - conda-build
-    - mamba
-    - boa
-    - python >=3.9
+    - python >=3.10
     - click >=8
-    - cookiecutter
     - gitpython
     - packaging
     - python-dateutil
     - python-gitlab
     - pytz
-    - pyyaml
-    - setuptools
     - tomli
     - tomlkit
-    - xdg
     - __unix
 
 test:
