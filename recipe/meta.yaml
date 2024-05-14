@@ -16,28 +16,20 @@ build:
 
 requirements:
   host:
-    - python >=3.9
-    - setuptools >=61.0.0
-    - wheel
+    - python >=3.10
+    - hatchling
+    - versioningit
     - pip
   run:
-    - conda
-    - conda-build
-    - mamba
-    - boa
-    - python >=3.9
+    - python >=3.10
     - click >=8
-    - cookiecutter
     - gitpython
     - packaging
     - python-dateutil
     - python-gitlab
     - pytz
-    - pyyaml
-    - setuptools
     - tomli
     - tomlkit
-    - xdg
     - __unix
 
 test:
