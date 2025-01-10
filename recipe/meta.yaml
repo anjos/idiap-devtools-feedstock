@@ -1,3 +1,4 @@
+{% set python_min = '3.10' %}
 {% set name = "idiap-devtools" %}
 {% set version = "2.0.0" %}
 
@@ -6,22 +7,22 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
   sha256: 52fc1f2c5a0f01d48fbe99b8338d7f7b7a842106405feb292ff89f3ae0dfa988
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
-    - python >=3.10
+    - python {{ python_min }}
     - hatchling
     - versioningit
     - pip
   run:
-    - python >=3.10
+    - python >={{ python_min }}
     - click >=8
     - gitpython
     - packaging
@@ -44,6 +45,7 @@ test:
     - pip
     - pytest
     - git
+    - python {{ python_min }}
 
 about:
   home: https://pypi.org/project/idiap-devtools/
