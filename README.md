@@ -11,7 +11,7 @@ Summary: This package contains a *pot-pourri* of various tools required to devel
 
 Development: https://gitlab.idiap.ch/software/idiap-devtools
 
-Documentation: https://idiap-devtools.readthedocs.io
+Documentation: https://idiap-devtools.readthedocs.io/
 
 Current build status
 ====================
